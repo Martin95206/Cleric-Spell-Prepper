@@ -1,0 +1,2881 @@
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class clericWarDomain {
+
+	private JFrame frame;
+	private JTextField wisModField;
+	private JTextField levelField;
+	private String wisMod;
+	private String level;
+	private static Integer mod = 0;
+	private static Integer clericLevel = 1;
+	private JButton btnReset;
+	private final Action backToSelectClass = new SwingAction();
+	private static Integer numOfSpells = 0;
+	private Integer cantripLimit = 3;
+	private Integer cantripCount = 0;
+	private static Integer spellLimit = 1;
+	private JCheckBox chckbxGuidance;
+	private JCheckBox chckbxLight;
+	private JCheckBox chckbxMending;
+	private JCheckBox chckbxResistance;
+	private JCheckBox chckbxSacredFlame;
+	private JCheckBox chckbxSpareTheDying;
+	private JCheckBox chckbxThaumaturgy;
+	private static JCheckBox chckbxCommand;
+	private static JCheckBox chckbxCreatedestroyWater;
+	private static JCheckBox chckbxCureWounds;
+	private static JCheckBox chckbxDetectEvilAnd;
+	private static JCheckBox chckbxDetectMagic;
+	private static JCheckBox chckbxDetectPoisondisease;
+	private static JCheckBox chckbxGuidingBolt;
+	private static JCheckBox chckbxHealingWord;
+	private static JCheckBox chckbxInflictWounds;
+	private static JCheckBox chckbxProtectionFromEvilgood;
+	private static JCheckBox chckbxPurifyFooddrink;
+	private static JCheckBox chckbxSanctuary;
+	private static JCheckBox chckbxShieldOfFaith;
+	private static JCheckBox chckbxBane;
+	private static JCheckBox chckbxBless;
+	private static JCheckBox chckbxAid;
+	private static JCheckBox chckbxAugury;
+	private static JCheckBox chckbxBlindnessdeafness;
+	private static JCheckBox chckbxCalmEmotions;
+	private static JCheckBox chckbxContinualFlame;
+	private static JCheckBox chckbxEnhanceAbility;
+	private static JCheckBox chckbxFindTraps;
+	private static JCheckBox chckbxGentleRepose;
+	private static JCheckBox chckbxHoldPerson;
+	private static JCheckBox chckbxLesserRestoration;
+	private static JCheckBox chckbxLocateObject;
+	private static JCheckBox chckbxPrayerOfHealing;
+	private static JCheckBox chckbxProtectionFromPoison;
+	private static JCheckBox chckbxSilence;
+	private static JCheckBox chckbxSpiritualWeapon;
+	private static JCheckBox chckbxWardingBond;
+	private static JCheckBox chckbxZoneOfTruth;
+	private static JCheckBox chckbxAnimateDead;
+	private static JCheckBox chckbxBeaconOfHope;
+	private static JCheckBox chckbxBestowCurse;
+	private static JCheckBox chckbxClairvoyance;
+	private static JCheckBox chckbxCreateFoodwater;
+	private static JCheckBox chckbxDaylight;
+	private static JCheckBox chckbxDispelMagic;
+	private static JCheckBox chckbxFeignDeath;
+	private static JCheckBox chckbxGlyphOfWarding;
+	private static JCheckBox chckbxMagicCircle;
+	private static JCheckBox chckbxMassHealingWord;
+	private static JCheckBox chckbxMeldIntoStone;
+	private static JCheckBox chckbxProtectionFromEnergy;
+	private static JCheckBox chckbxRemoveCurse;
+	private static JCheckBox chckbxRevivify;
+	private static JCheckBox chckbxSending;
+	private static JCheckBox chckbxSpeakWithDead;
+	private static JCheckBox chckbxSpiritGuardians;
+	private static JCheckBox chckbxTongues;
+	private static JCheckBox chckbxWaterWalk;
+	private static JCheckBox chckbxBanishment;
+	private static JCheckBox chckbxControlWater;
+	private static JCheckBox chckbxDeathWard;
+	private static JCheckBox chckbxDivination;
+	private static JCheckBox chckbxFreedomOfMovement;
+	private static JCheckBox chckbxGuardianOfFaith;
+	private static JCheckBox chckbxLocateCreature;
+	private static JCheckBox chckbxStoneShape;
+	private static JCheckBox chckbxCommune;
+	private static JCheckBox chckbxContagion;
+	private static JCheckBox chckbxDispelEvilgood;
+	private static JCheckBox chckbxFlameStrike;
+	private static JCheckBox chckbxGeas;
+	private static JCheckBox chckbxGreaterRestoration;
+	private static JCheckBox chckbxHallow;
+	private static JCheckBox chckbxInsectPlague;
+	private static JCheckBox chckbxLegendLore;
+	private static JCheckBox chckbxMassCureWounds;
+	private static JCheckBox chckbxPlanarBinding;
+	private static JCheckBox chckbxRaiseDead;
+	private static JCheckBox chckbxScrying;
+	private static JCheckBox chckbxBladeBarrier;
+	private static JCheckBox chckbxCreateUndead;
+	private static JCheckBox chckbxFindThePath;
+	private static JCheckBox chckbxForbiddance;
+	private static JCheckBox chckbxHarm;
+	private static JCheckBox chckbxHeal;
+	private static JCheckBox chckbxHeroesFeast;
+	private static JCheckBox chckbxPlanarAlly;
+	private static JCheckBox chckbxTrueSeeing;
+	private static JCheckBox chckbxWordOfRecall;
+	private static JCheckBox chckbxConjureCelestial;
+	private static JCheckBox chckbxDivineWord;
+	private static JCheckBox chckbxEtherealness;
+	private static JCheckBox chckbxFireStorm;
+	private static JCheckBox chckbxPlaneShift;
+	private static JCheckBox chckbxRegenerate;
+	private static JCheckBox chckbxResurrection;
+	private static JCheckBox chckbxSymbol;
+	private static JCheckBox chckbxAntimagicField;
+	private static JCheckBox chckbxControlWeather;
+	private static JCheckBox chckbxEarthquake;
+	private static JCheckBox chckbxHolyAura;
+	private static JCheckBox chckbxAstralProjection;
+	private static JCheckBox chckbxGate;
+	private static JCheckBox chckbxMassHeal;
+	private static JCheckBox chckbxTrueResurrection;
+	private JTextField preppedSpells;
+	private JTextField cantripLim;
+	private JLabel lblOfCantrips;
+	private static JTextField spellCount;
+	private JTextField canCount;
+	private JLabel lblCantripsChosen;
+	private final Action reset = new SwingAction_1();
+	private static JCheckBox chckbxDivineFavor;
+	private static JCheckBox chckbxMagicWeapon;
+	private static JCheckBox chckbxCrusadersMantle;
+	private static JCheckBox chckbxStoneskin;
+	private static JCheckBox chckbxHoldMonster;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					clericWarDomain window = new clericWarDomain();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public clericWarDomain() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 959, 769);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton button = new JButton("<- Back");
+		button.setAction(backToSelectClass);
+		
+		wisModField = new JTextField();
+		wisModField.setText("0");
+		wisModField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				wisMod = wisModField.getText();
+				
+				if (!isParsable(wisMod)) {
+					wisModField.setText("Invalid Input");
+				}
+				else if (isParsable(wisMod)) {
+					mod = Integer.valueOf(wisMod);
+					
+					if (mod > 5) {
+						wisModField.setText("That is your score");
+						wisMod = wisModField.getText();
+					}
+				}
+				
+				spellLimit = mod + clericLevel;
+				preppedSpells.setText(spellLimit.toString());
+				
+			}
+		});
+		
+		wisModField.setColumns(10);
+		
+		
+		JLabel lblWisdomModifier = new JLabel("Wisdom Modifier");
+		
+		levelField = new JTextField();
+		levelField.setText("1");
+		levelField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				level = levelField.getText();
+				
+				if (!isParsable(level)) {
+					levelField.setText("Invalid Input");
+				}
+				else if (isParsable(level)) {
+					clericLevel = Integer.valueOf(level);
+					
+					if (clericLevel > 20) {
+						levelField.setText("Invalid Input");
+					}
+					
+					cantripLimit = cantripsKnown(clericLevel);
+					cantripLim.setText(cantripLimit.toString());
+					
+				}
+				
+				availableSpells(clericLevel);
+				domainSpells(clericLevel);
+				
+				spellLimit = mod + clericLevel;
+				preppedSpells.setText(spellLimit.toString());
+				
+			}
+		});
+		levelField.setColumns(10);
+		
+		JLabel lblLevel = new JLabel("Level");
+		
+		btnReset = new JButton("Reset");
+		btnReset.setAction(reset);
+		
+		JLabel lblCantrips = new JLabel("Cantrips");
+		
+		chckbxGuidance = new JCheckBox("Guidance");
+		chckbxGuidance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxGuidance.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxGuidance.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxLight = new JCheckBox("Light");
+		chckbxLight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxLight.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxLight.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxMending = new JCheckBox("Mending");
+		chckbxMending.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxMending.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxMending.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxResistance = new JCheckBox("Resistance");
+		chckbxResistance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxResistance.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxResistance.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxSacredFlame = new JCheckBox("Sacred Flame");
+		chckbxSacredFlame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxSacredFlame.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxSacredFlame.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxSpareTheDying = new JCheckBox("Spare the Dying");
+		chckbxSpareTheDying.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxSpareTheDying.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxSpareTheDying.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxThaumaturgy = new JCheckBox("Thaumaturgy");
+		chckbxThaumaturgy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbxThaumaturgy.isSelected()) {
+					cantripCount++;
+					if (cantripCount == cantripLimit) {
+						chckbxGuidance.setEnabled(false);
+						chckbxLight.setEnabled(false);
+						chckbxMending.setEnabled(false);
+						chckbxResistance.setEnabled(false);
+						chckbxSacredFlame.setEnabled(false);
+						chckbxSpareTheDying.setEnabled(false);
+						chckbxThaumaturgy.setEnabled(false);
+					}
+				}
+				else if (!chckbxThaumaturgy.isSelected()) {
+					cantripCount--;
+					if (cantripCount != cantripLimit) {
+						chckbxGuidance.setEnabled(true);
+						chckbxLight.setEnabled(true);
+						chckbxMending.setEnabled(true);
+						chckbxResistance.setEnabled(true);
+						chckbxSacredFlame.setEnabled(true);
+						chckbxSpareTheDying.setEnabled(true);
+						chckbxThaumaturgy.setEnabled(true);
+					}
+				}
+				canCount.setText(cantripCount.toString());
+			}
+		});
+		
+		chckbxBane = new JCheckBox("Bane");
+		chckbxBane.setToolTipText("");
+		chckbxBane.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBane);
+			}
+		});
+		
+		chckbxBless = new JCheckBox("Bless");
+				
+		chckbxCommand = new JCheckBox("Command");
+		chckbxCommand.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCommand);
+			}
+		});
+				
+		chckbxCreatedestroyWater = new JCheckBox("Create/Destroy Water");
+		chckbxCreatedestroyWater.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCreatedestroyWater);
+			}
+		});
+				
+		chckbxCureWounds = new JCheckBox("Cure Wounds");
+				
+		chckbxDetectEvilAnd = new JCheckBox("Detect Evil and Good");
+		chckbxDetectEvilAnd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDetectEvilAnd);
+			}
+		});
+				
+		chckbxDetectMagic = new JCheckBox("Detect Magic");
+		chckbxDetectMagic.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDetectMagic);
+			}
+		});
+				
+		chckbxDetectPoisondisease = new JCheckBox("Detect Poison/Disease");
+		chckbxDetectPoisondisease.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDetectPoisondisease);
+			}
+		});
+		
+		chckbxGuidingBolt = new JCheckBox("Guiding Bolt");
+		chckbxGuidingBolt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGuidingBolt);
+			}
+		});
+		
+		chckbxHealingWord = new JCheckBox("Healing Word");
+		chckbxHealingWord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHealingWord);
+			}
+		});
+		
+		chckbxInflictWounds = new JCheckBox("Inflict Wounds");
+		chckbxInflictWounds.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxInflictWounds);
+			}
+		});
+		
+		chckbxProtectionFromEvilgood = new JCheckBox("Protection from Evil/Good");
+		chckbxProtectionFromEvilgood.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxProtectionFromEvilgood);
+			}
+		});
+		
+		chckbxPurifyFooddrink = new JCheckBox("Purify Food/Drink");
+		chckbxPurifyFooddrink.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxPurifyFooddrink);
+			}
+		});
+		
+		chckbxSanctuary = new JCheckBox("Sanctuary");
+		chckbxSanctuary.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSanctuary);
+			}
+		});
+		
+		chckbxShieldOfFaith = new JCheckBox("Shield of Faith");
+		chckbxShieldOfFaith.setSelected(true);
+		chckbxShieldOfFaith.setEnabled(false);
+		chckbxShieldOfFaith.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxShieldOfFaith);
+			}
+		});
+		
+		JLabel lblstLevel = new JLabel("1st Level");
+		
+		chckbxAid = new JCheckBox("Aid");
+		chckbxAid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxAid);
+			}
+		});
+		
+		chckbxAugury = new JCheckBox("Augury");
+		chckbxAugury.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxAugury);
+			}
+		});
+		
+		chckbxBlindnessdeafness = new JCheckBox("Blindness/Deafness");
+		chckbxBlindnessdeafness.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBlindnessdeafness);
+			}
+		});
+		
+		chckbxCalmEmotions = new JCheckBox("Calm Emotions");
+		chckbxCalmEmotions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCalmEmotions);
+			}
+		});
+		
+		chckbxContinualFlame = new JCheckBox("Continual Flame");
+		chckbxContinualFlame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxContinualFlame);
+			}
+		});
+		
+		chckbxEnhanceAbility = new JCheckBox("Enhance Ability");
+		chckbxEnhanceAbility.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxEnhanceAbility);
+			}
+		});
+		
+		chckbxFindTraps = new JCheckBox("Find Traps");
+		chckbxFindTraps.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFindTraps);
+			}
+		});
+		
+		chckbxGentleRepose = new JCheckBox("Gentle Repose");
+		chckbxGentleRepose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGentleRepose);
+			}
+		});
+		
+		chckbxHoldPerson = new JCheckBox("Hold Person");
+		chckbxHoldPerson.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHoldPerson);
+			}
+		});
+		
+		chckbxLesserRestoration = new JCheckBox("Lesser Restoration");
+		chckbxLesserRestoration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxLesserRestoration);
+			}
+		});
+		
+		chckbxLocateObject = new JCheckBox("Locate Object");
+		chckbxLocateObject.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxLocateObject);
+			}
+		});
+		
+		chckbxPrayerOfHealing = new JCheckBox("Prayer of Healing");
+		chckbxPrayerOfHealing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxPrayerOfHealing);
+			}
+		});
+		
+		chckbxProtectionFromPoison = new JCheckBox("Protection from Poison");
+		chckbxProtectionFromPoison.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxProtectionFromPoison);
+			}
+		});
+		
+		chckbxSilence = new JCheckBox("Silence");
+		chckbxSilence.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSilence);
+			}
+		});
+		
+		chckbxSpiritualWeapon = new JCheckBox("Spiritual Weapon");
+		chckbxSpiritualWeapon.setEnabled(false);
+		chckbxSpiritualWeapon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSpiritualWeapon);
+			}
+		});
+		
+		chckbxWardingBond = new JCheckBox("Warding Bond");
+		chckbxWardingBond.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxWardingBond);
+			}
+		});
+		
+		chckbxZoneOfTruth = new JCheckBox("Zone of Truth");
+		chckbxZoneOfTruth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				spellLimitCheck(chckbxZoneOfTruth);
+			}
+		});
+		
+		JLabel lblndLevel = new JLabel("2nd Level");
+		
+		chckbxAnimateDead = new JCheckBox("Animate Dead");
+		chckbxAnimateDead.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxAnimateDead);
+			}
+		});
+		
+		chckbxBeaconOfHope = new JCheckBox("Beacon of Hope");
+		chckbxBeaconOfHope.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBeaconOfHope);
+			}
+		});
+		
+		chckbxBestowCurse = new JCheckBox("Bestow Curse");
+		chckbxBestowCurse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBestowCurse);
+			}
+		});
+		
+		chckbxClairvoyance = new JCheckBox("Clairvoyance");
+		chckbxClairvoyance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxClairvoyance);
+			}
+		});
+		
+		chckbxCreateFoodwater = new JCheckBox("Create Food/Water");
+		chckbxCreateFoodwater.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCreateFoodwater);
+			}
+		});
+		
+		chckbxDaylight = new JCheckBox("Daylight");
+		chckbxDaylight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDaylight);
+			}
+		});
+		
+		chckbxDispelMagic = new JCheckBox("Dispel Magic");
+		chckbxDispelMagic.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDispelMagic);
+			}
+		});
+		
+		chckbxFeignDeath = new JCheckBox("Feign Death");
+		chckbxFeignDeath.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFeignDeath);
+			}
+		});
+		
+		chckbxGlyphOfWarding = new JCheckBox("Glyph of Warding");
+		chckbxGlyphOfWarding.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGlyphOfWarding);
+			}
+		});
+		
+		chckbxMagicCircle = new JCheckBox("Magic Circle");
+		chckbxMagicCircle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxMagicCircle);
+			}
+		});
+		
+		chckbxMassHealingWord = new JCheckBox("Mass Healing Word");
+		chckbxMassHealingWord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxMassHealingWord);
+			}
+		});
+		
+		chckbxMeldIntoStone = new JCheckBox("Meld into Stone");
+		chckbxMeldIntoStone.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxMeldIntoStone);
+			}
+		});
+		
+		chckbxProtectionFromEnergy = new JCheckBox("Protection from Energy");
+		chckbxProtectionFromEnergy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxProtectionFromEnergy);
+			}
+		});
+		
+		chckbxRemoveCurse = new JCheckBox("Remove Curse");
+		chckbxRemoveCurse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxRemoveCurse);
+			}
+		});
+		
+		chckbxRevivify = new JCheckBox("Revivify");
+		chckbxRevivify.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxRevivify);
+			}
+		});
+		
+		chckbxSending = new JCheckBox("Sending");
+		chckbxSending.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSending);
+			}
+		});
+		
+		chckbxSpeakWithDead = new JCheckBox("Speak with Dead");
+		chckbxSpeakWithDead.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSpeakWithDead);
+			}
+		});
+		
+		chckbxSpiritGuardians = new JCheckBox("Spirit Guardians");
+		chckbxSpiritGuardians.setEnabled(false);
+		chckbxSpiritGuardians.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSpiritGuardians);
+			}
+		});
+		
+		chckbxTongues = new JCheckBox("Tongues");
+		chckbxTongues.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxTongues);
+			}
+		});
+		
+		chckbxWaterWalk = new JCheckBox("Water Walk");
+		chckbxWaterWalk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxWaterWalk);
+			}
+		});
+		
+		JLabel lblrdLevel = new JLabel("3rd Level");
+		
+		chckbxBanishment = new JCheckBox("Banishment");
+		chckbxBanishment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBanishment);
+			}
+		});
+		
+		chckbxControlWater = new JCheckBox("Control Water");
+		chckbxControlWater.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxControlWater);
+			}
+		});
+		
+		chckbxDeathWard = new JCheckBox("Death Ward");
+		chckbxDeathWard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDeathWard);
+			}
+		});
+		
+		chckbxDivination = new JCheckBox("Divination");
+		chckbxDivination.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDivination);
+			}
+		});
+		
+		chckbxFreedomOfMovement = new JCheckBox("Freedom of Movement");
+		chckbxFreedomOfMovement.setEnabled(false);
+		chckbxFreedomOfMovement.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFreedomOfMovement);
+			}
+		});
+		
+		chckbxGuardianOfFaith = new JCheckBox("Guardian of Faith");
+		chckbxGuardianOfFaith.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGuardianOfFaith);
+			}
+		});
+		
+		chckbxLocateCreature = new JCheckBox("Locate Creature");
+		chckbxLocateCreature.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxLocateCreature);
+			}
+		});
+		
+		chckbxStoneShape = new JCheckBox("Stone Shape");
+		chckbxStoneShape.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxStoneShape);
+			}
+		});
+		
+		JLabel lblthLevel = new JLabel("4th Level");
+		
+		chckbxCommune = new JCheckBox("Commune");
+		chckbxCommune.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCommune);
+			}
+		});
+		
+		chckbxContagion = new JCheckBox("Contagion");
+		chckbxContagion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxContagion);
+			}
+		});
+		
+		chckbxDispelEvilgood = new JCheckBox("Dispel Evil/Good");
+		chckbxDispelEvilgood.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDispelEvilgood);
+			}
+		});
+		
+		chckbxFlameStrike = new JCheckBox("Flame Strike");
+		chckbxFlameStrike.setEnabled(false);
+		chckbxFlameStrike.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFlameStrike);
+			}
+		});
+		
+		chckbxGeas = new JCheckBox("Geas");
+		chckbxGeas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGeas);
+			}
+		});
+		
+		chckbxGreaterRestoration = new JCheckBox("Greater Restoration");
+		chckbxGreaterRestoration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGreaterRestoration);
+			}
+		});
+		
+		chckbxHallow = new JCheckBox("Hallow");
+		chckbxHallow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHallow);
+			}
+		});
+		
+		chckbxInsectPlague = new JCheckBox("Insect Plague");
+		chckbxInsectPlague.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxInsectPlague);
+			}
+		});
+		
+		chckbxLegendLore = new JCheckBox("Legend Lore");
+		chckbxLegendLore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxLegendLore);
+			}
+		});
+		
+		chckbxMassCureWounds = new JCheckBox("Mass Cure Wounds");
+		chckbxMassCureWounds.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxMassCureWounds);
+			}
+		});
+		
+		chckbxPlanarBinding = new JCheckBox("Planar Binding");
+		chckbxPlanarBinding.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxPlanarBinding);
+			}
+		});
+		
+		chckbxRaiseDead = new JCheckBox("Raise Dead");
+		chckbxRaiseDead.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxRaiseDead);
+			}
+		});
+		
+		chckbxScrying = new JCheckBox("Scrying");
+		chckbxScrying.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxScrying);
+			}
+		});
+		
+		JLabel lblthLevel_1 = new JLabel("5th Level");
+		
+		chckbxBladeBarrier = new JCheckBox("Blade Barrier");
+		chckbxBladeBarrier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxBladeBarrier);
+			}
+		});
+		
+		chckbxCreateUndead = new JCheckBox("Create Undead");
+		chckbxCreateUndead.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxCreateUndead);
+			}
+		});
+		
+		chckbxFindThePath = new JCheckBox("Find the Path");
+		chckbxFindThePath.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFindThePath);
+			}
+		});
+		
+		chckbxForbiddance = new JCheckBox("Forbiddance");
+		chckbxForbiddance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxForbiddance);
+			}
+		});
+		
+		chckbxHarm = new JCheckBox("Harm");
+		chckbxHarm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHarm);
+			}
+		});
+		
+		chckbxHeal = new JCheckBox("Heal");
+		chckbxHeal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHeal);
+			}
+		});
+		
+		chckbxHeroesFeast = new JCheckBox("Heroes' Feast");
+		chckbxHeroesFeast.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHeroesFeast);
+			}
+		});
+		
+		chckbxPlanarAlly = new JCheckBox("Planar Ally");
+		chckbxPlanarAlly.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxPlanarAlly);
+			}
+		});
+		
+		chckbxTrueSeeing = new JCheckBox("True Seeing");
+		chckbxTrueSeeing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxTrueSeeing);
+			}
+		});
+		
+		chckbxWordOfRecall = new JCheckBox("Word of Recall");
+		chckbxWordOfRecall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxWordOfRecall);
+			}
+		});
+		
+		JLabel lblthLevel_2 = new JLabel("6th Level");
+		
+		chckbxConjureCelestial = new JCheckBox("Conjure Celestial");
+		chckbxConjureCelestial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxConjureCelestial);
+			}
+		});
+		
+		chckbxDivineWord = new JCheckBox("Divine Word");
+		chckbxDivineWord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxDivineWord);
+			}
+		});
+		
+		chckbxEtherealness = new JCheckBox("Etherealness");
+		chckbxEtherealness.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxEtherealness);
+			}
+		});
+		
+		chckbxFireStorm = new JCheckBox("Fire Storm");
+		chckbxFireStorm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxFireStorm);
+			}
+		});
+		
+		chckbxPlaneShift = new JCheckBox("Plane Shift");
+		chckbxPlaneShift.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxPlaneShift);
+			}
+		});
+		
+		chckbxRegenerate = new JCheckBox("Regenerate");
+		chckbxRegenerate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxRegenerate);
+			}
+		});
+		
+		chckbxResurrection = new JCheckBox("Resurrection");
+		chckbxResurrection.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxResurrection);
+			}
+		});
+		
+		chckbxSymbol = new JCheckBox("Symbol");
+		chckbxSymbol.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxSymbol);
+			}
+		});
+		
+		JLabel lblthLevel_3 = new JLabel("7th Level");
+		
+		chckbxAntimagicField = new JCheckBox("Antimagic Field");
+		chckbxAntimagicField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxAntimagicField);
+			}
+		});
+		
+		chckbxControlWeather = new JCheckBox("Control Weather");
+		chckbxControlWeather.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxControlWeather);
+			}
+		});
+		
+		chckbxEarthquake = new JCheckBox("Earthquake");
+		chckbxEarthquake.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxEarthquake);
+			}
+		});
+		
+		chckbxHolyAura = new JCheckBox("Holy Aura");
+		chckbxHolyAura.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxHolyAura);
+			}
+		});
+		
+		JLabel lblthLevel_4 = new JLabel("8th Level");
+		
+		chckbxAstralProjection = new JCheckBox("Astral Projection");
+		chckbxAstralProjection.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxAstralProjection);
+			}
+		});
+		
+		chckbxGate = new JCheckBox("Gate");
+		chckbxGate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxGate);
+			}
+		});
+		
+		chckbxMassHeal = new JCheckBox("Mass Heal");
+		chckbxMassHeal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxMassHeal);
+			}
+		});
+		
+		chckbxTrueResurrection = new JCheckBox("True Resurrection");
+		chckbxTrueResurrection.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spellLimitCheck(chckbxTrueResurrection);
+			}
+		});
+		
+		JLabel lblthLevel_5 = new JLabel("9th Level");
+		
+		preppedSpells = new JTextField();
+		preppedSpells.setEditable(false);
+		preppedSpells.setColumns(10);
+		preppedSpells.setText(spellLimit.toString());
+		
+		JLabel label_1 = new JLabel("+");
+		
+		JLabel lblOfPrepared = new JLabel("# of Prepared Spells");
+		
+		cantripLim = new JTextField();
+		cantripLim.setEditable(false);
+		cantripLim.setColumns(10);
+		cantripLim.setText(cantripLimit.toString());
+		
+		lblOfCantrips = new JLabel("# of Cantrips");
+		
+		spellCount = new JTextField();
+		spellCount.setEditable(false);
+		spellCount.setColumns(10);
+		
+		JLabel lblSpellsChosen = new JLabel("Spells Chosen");
+		
+		JLabel label = new JLabel("=");
+		
+		canCount = new JTextField();
+		canCount.setEditable(false);
+		canCount.setColumns(10);
+		
+		lblCantripsChosen = new JLabel("Cantrips Chosen");
+		
+		chckbxDivineFavor = new JCheckBox("Divine Favor");
+		chckbxDivineFavor.setEnabled(false);
+		chckbxDivineFavor.setSelected(true);
+		
+		chckbxMagicWeapon = new JCheckBox("Magic Weapon");
+		chckbxMagicWeapon.setEnabled(false);
+		
+		chckbxCrusadersMantle = new JCheckBox("Crusader's Mantle");
+		chckbxCrusadersMantle.setEnabled(false);
+		
+		chckbxStoneskin = new JCheckBox("Stoneskin");
+		chckbxStoneskin.setEnabled(false);
+		
+		chckbxHoldMonster = new JCheckBox("Hold Monster");
+		chckbxHoldMonster.setEnabled(false);
+		
+		
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblthLevel_2)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(chckbxBane)
+													.addComponent(chckbxBless)
+													.addComponent(chckbxCommand)
+													.addComponent(chckbxCreatedestroyWater)
+													.addComponent(chckbxCureWounds)
+													.addComponent(chckbxDetectEvilAnd)
+													.addComponent(chckbxDetectMagic)
+													.addComponent(chckbxDetectPoisondisease)
+													.addComponent(chckbxGuidingBolt)
+													.addComponent(chckbxHealingWord)
+													.addComponent(chckbxInflictWounds)
+													.addComponent(chckbxProtectionFromEvilgood)
+													.addComponent(chckbxPurifyFooddrink)
+													.addComponent(chckbxSanctuary)
+													.addComponent(chckbxShieldOfFaith)
+													.addComponent(lblstLevel)
+													.addComponent(chckbxConjureCelestial)
+													.addComponent(chckbxDivineWord)
+													.addComponent(chckbxFireStorm)
+													.addComponent(lblthLevel_3)
+													.addComponent(chckbxSymbol)
+													.addComponent(chckbxResurrection)
+													.addComponent(chckbxRegenerate)
+													.addComponent(chckbxPlaneShift)
+													.addComponent(chckbxEtherealness)
+													.addComponent(chckbxDivineFavor))
+												.addGap(26))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(canCount, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+													.addComponent(lblCantripsChosen))
+												.addGap(26)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(cantripLim, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+													.addComponent(lblOfCantrips))
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(lblWisdomModifier)
+													.addComponent(wisModField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+										.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(chckbxGuidance)
+													.addComponent(chckbxLight)
+													.addComponent(chckbxMending)
+													.addComponent(chckbxResistance)
+													.addComponent(chckbxSacredFlame)
+													.addComponent(chckbxSpareTheDying)
+													.addComponent(chckbxThaumaturgy))
+												.addGap(15))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(chckbxBladeBarrier)
+													.addComponent(chckbxFindThePath)
+													.addComponent(chckbxForbiddance)
+													.addComponent(chckbxCreateUndead)
+													.addComponent(chckbxHarm)
+													.addComponent(chckbxHeal)
+													.addComponent(chckbxHeroesFeast)
+													.addComponent(chckbxPlanarAlly)
+													.addComponent(chckbxTrueSeeing)
+													.addComponent(chckbxWordOfRecall))
+												.addGap(18))))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(chckbxAntimagicField)
+													.addComponent(chckbxControlWeather)
+													.addComponent(chckbxEarthquake)
+													.addComponent(chckbxHolyAura)
+													.addComponent(chckbxAid)
+													.addComponent(chckbxAugury)
+													.addComponent(chckbxBlindnessdeafness)
+													.addComponent(chckbxCalmEmotions)
+													.addComponent(chckbxContinualFlame)
+													.addComponent(chckbxEnhanceAbility)
+													.addComponent(chckbxFindTraps)
+													.addComponent(chckbxGentleRepose)
+													.addComponent(chckbxHoldPerson)
+													.addComponent(chckbxLesserRestoration)
+													.addComponent(chckbxLocateObject)
+													.addComponent(chckbxPrayerOfHealing)
+													.addComponent(chckbxProtectionFromPoison)
+													.addComponent(chckbxSilence)
+													.addComponent(chckbxSpiritualWeapon)
+													.addComponent(chckbxWardingBond)
+													.addComponent(chckbxZoneOfTruth)
+													.addComponent(lblndLevel)
+													.addComponent(lblthLevel_4))
+												.addGap(13))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+												.addGap(18)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addComponent(lblLevel)
+													.addComponent(levelField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+										.addComponent(chckbxMagicWeapon))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(chckbxCrusadersMantle)
+										.addComponent(lblthLevel_5)
+										.addComponent(chckbxMassHeal)
+										.addComponent(chckbxGate)
+										.addComponent(chckbxAstralProjection)
+										.addComponent(chckbxSpeakWithDead)
+										.addComponent(chckbxSending)
+										.addComponent(chckbxRevivify)
+										.addComponent(chckbxRemoveCurse)
+										.addComponent(chckbxProtectionFromEnergy)
+										.addComponent(chckbxMagicCircle)
+										.addComponent(chckbxSpiritGuardians)
+										.addComponent(chckbxTongues)
+										.addComponent(chckbxWaterWalk)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+													.addGroup(groupLayout.createSequentialGroup()
+														.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+															.addComponent(chckbxAnimateDead)
+															.addComponent(chckbxBeaconOfHope)
+															.addComponent(chckbxBestowCurse)
+															.addComponent(chckbxClairvoyance)
+															.addComponent(chckbxCreateFoodwater)
+															.addComponent(chckbxDaylight)
+															.addComponent(chckbxDispelMagic)
+															.addComponent(chckbxFeignDeath)
+															.addComponent(lblrdLevel)
+															.addComponent(chckbxTrueResurrection)
+															.addComponent(chckbxMeldIntoStone)
+															.addComponent(chckbxMassHealingWord))
+														.addGap(51))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(label, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(preppedSpells, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+														.addGap(18))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(lblOfPrepared)
+														.addGap(18)))
+												.addComponent(chckbxGlyphOfWarding))
+											.addGap(18)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(chckbxStoneskin)
+												.addComponent(lblthLevel)
+												.addComponent(chckbxStoneShape)
+												.addComponent(chckbxLocateCreature)
+												.addComponent(chckbxGuardianOfFaith)
+												.addComponent(chckbxFreedomOfMovement)
+												.addComponent(chckbxDivination)
+												.addComponent(chckbxDeathWard)
+												.addComponent(chckbxBanishment)
+												.addGroup(groupLayout.createSequentialGroup()
+													.addGap(7)
+													.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+														.addComponent(lblSpellsChosen)
+														.addComponent(spellCount, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+												.addComponent(chckbxControlWater)))))))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(31)
+							.addComponent(lblCantrips)))
+					.addGap(11)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(chckbxContagion)
+						.addComponent(chckbxDispelEvilgood)
+						.addComponent(chckbxFlameStrike)
+						.addComponent(chckbxGeas)
+						.addComponent(chckbxHallow)
+						.addComponent(chckbxInsectPlague)
+						.addComponent(chckbxLegendLore)
+						.addComponent(chckbxMassCureWounds)
+						.addComponent(chckbxPlanarBinding)
+						.addComponent(chckbxRaiseDead)
+						.addComponent(chckbxScrying)
+						.addComponent(lblthLevel_1)
+						.addComponent(chckbxCommune)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnReset)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(button))
+						.addComponent(chckbxGreaterRestoration)
+						.addComponent(chckbxHoldMonster))
+					.addContainerGap(29, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(13)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblSpellsChosen)
+						.addComponent(lblOfPrepared)
+						.addComponent(lblLevel)
+						.addComponent(lblWisdomModifier)
+						.addComponent(lblOfCantrips)
+						.addComponent(lblCantripsChosen))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(button)
+						.addComponent(btnReset)
+						.addComponent(spellCount, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(preppedSpells, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label)
+						.addComponent(levelField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label_1)
+						.addComponent(wisModField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cantripLim, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(canCount, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(32)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblCantrips)
+						.addComponent(lblstLevel)
+						.addComponent(lblndLevel)
+						.addComponent(lblrdLevel)
+						.addComponent(lblthLevel)
+						.addComponent(lblthLevel_1))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxGuidance)
+						.addComponent(chckbxBane)
+						.addComponent(chckbxAid)
+						.addComponent(chckbxAnimateDead)
+						.addComponent(chckbxBanishment)
+						.addComponent(chckbxCommune))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxLight)
+						.addComponent(chckbxBless)
+						.addComponent(chckbxAugury)
+						.addComponent(chckbxBeaconOfHope)
+						.addComponent(chckbxContagion)
+						.addComponent(chckbxControlWater))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxMending)
+						.addComponent(chckbxCommand)
+						.addComponent(chckbxBlindnessdeafness)
+						.addComponent(chckbxBestowCurse)
+						.addComponent(chckbxDeathWard)
+						.addComponent(chckbxDispelEvilgood))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxResistance)
+						.addComponent(chckbxCreatedestroyWater)
+						.addComponent(chckbxCalmEmotions)
+						.addComponent(chckbxClairvoyance)
+						.addComponent(chckbxDivination)
+						.addComponent(chckbxFlameStrike))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxSacredFlame)
+						.addComponent(chckbxCureWounds)
+						.addComponent(chckbxContinualFlame)
+						.addComponent(chckbxCreateFoodwater)
+						.addComponent(chckbxFreedomOfMovement)
+						.addComponent(chckbxGeas))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxSpareTheDying)
+						.addComponent(chckbxDetectEvilAnd)
+						.addComponent(chckbxEnhanceAbility)
+						.addComponent(chckbxDaylight)
+						.addComponent(chckbxGuardianOfFaith)
+						.addComponent(chckbxGreaterRestoration))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxThaumaturgy)
+						.addComponent(chckbxDetectMagic)
+						.addComponent(chckbxFindTraps)
+						.addComponent(chckbxDispelMagic)
+						.addComponent(chckbxLocateCreature)
+						.addComponent(chckbxHallow))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxDetectPoisondisease)
+								.addComponent(chckbxGentleRepose)
+								.addComponent(chckbxFeignDeath)
+								.addComponent(chckbxStoneShape)
+								.addComponent(chckbxInsectPlague))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxGuidingBolt)
+								.addComponent(chckbxHoldPerson)
+								.addComponent(chckbxGlyphOfWarding)
+								.addComponent(chckbxLegendLore)
+								.addComponent(chckbxStoneskin))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxHealingWord)
+								.addComponent(chckbxLesserRestoration)
+								.addComponent(chckbxMagicCircle)
+								.addComponent(chckbxMassCureWounds)))
+						.addComponent(lblthLevel_2))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxInflictWounds)
+						.addComponent(chckbxLocateObject)
+						.addComponent(chckbxMassHealingWord)
+						.addComponent(chckbxPlanarBinding)
+						.addComponent(chckbxBladeBarrier))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxProtectionFromEvilgood)
+						.addComponent(chckbxPrayerOfHealing)
+						.addComponent(chckbxMeldIntoStone)
+						.addComponent(chckbxRaiseDead)
+						.addComponent(chckbxCreateUndead))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxPurifyFooddrink)
+						.addComponent(chckbxProtectionFromPoison)
+						.addComponent(chckbxProtectionFromEnergy)
+						.addComponent(chckbxScrying)
+						.addComponent(chckbxFindThePath))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxSanctuary)
+						.addComponent(chckbxSilence)
+						.addComponent(chckbxRemoveCurse)
+						.addComponent(chckbxForbiddance)
+						.addComponent(chckbxHoldMonster))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxShieldOfFaith)
+						.addComponent(chckbxSpiritualWeapon)
+						.addComponent(chckbxRevivify)
+						.addComponent(chckbxHarm))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxWardingBond)
+								.addComponent(chckbxSending)
+								.addComponent(chckbxHeal)
+								.addComponent(chckbxDivineFavor))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxZoneOfTruth)
+								.addComponent(chckbxSpeakWithDead)
+								.addComponent(chckbxHeroesFeast))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxSpiritGuardians)
+								.addComponent(chckbxPlanarAlly)
+								.addComponent(chckbxMagicWeapon)))
+						.addComponent(lblthLevel_3))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxTongues)
+						.addComponent(chckbxTrueSeeing)
+						.addComponent(chckbxConjureCelestial))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxWaterWalk)
+						.addComponent(chckbxWordOfRecall)
+						.addComponent(chckbxDivineWord))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxEtherealness)
+						.addComponent(chckbxCrusadersMantle))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(chckbxFireStorm)
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblthLevel_5)
+							.addComponent(lblthLevel_4)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxPlaneShift)
+						.addComponent(chckbxAstralProjection)
+						.addComponent(chckbxAntimagicField))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxRegenerate)
+						.addComponent(chckbxGate)
+						.addComponent(chckbxControlWeather))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxResurrection)
+						.addComponent(chckbxMassHeal)
+						.addComponent(chckbxEarthquake))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxSymbol)
+						.addComponent(chckbxTrueResurrection)
+						.addComponent(chckbxHolyAura))
+					.addGap(35))
+		);
+		frame.getContentPane().setLayout(groupLayout);
+	}
+	
+	public static boolean isParsable(String input){
+	    boolean parsable = true;
+	    try{
+	        Integer.parseInt(input);
+	    }catch(NumberFormatException e){
+	        parsable = false;
+	    }
+	    return parsable;
+	}
+	
+	public static Integer cantripsKnown (Integer clericLevel) {
+		Integer numOfCantrips = 3;
+		
+		if ((clericLevel >= 1) && (clericLevel < 4)) {
+			numOfCantrips = 3;
+		}
+		else if ((clericLevel >= 4) && (clericLevel < 10)) {
+			numOfCantrips = 4;
+		}
+		else if (clericLevel >= 10) {
+			numOfCantrips = 5;
+		}
+		
+		return numOfCantrips;
+	}
+	
+	public static void domainSpells (Integer Lvl) {
+		
+		if (clericLevel >= 9) {
+			chckbxFlameStrike.setSelected(true);
+			chckbxHoldMonster.setSelected(true);
+			chckbxFreedomOfMovement.setSelected(true);
+			chckbxStoneskin.setSelected(true);
+			chckbxCrusadersMantle.setSelected(true);
+			chckbxSpiritGuardians.setSelected(true);
+			chckbxMagicWeapon.setSelected(true);
+			chckbxSpiritualWeapon.setSelected(true);
+			chckbxDivineFavor.setSelected(true);
+			chckbxShieldOfFaith.setSelected(true);
+		}
+		else if (clericLevel >= 7) {
+			chckbxFlameStrike.setSelected(false);
+			chckbxHoldMonster.setSelected(false);
+			chckbxFreedomOfMovement.setSelected(true);
+			chckbxStoneskin.setSelected(true);
+			chckbxCrusadersMantle.setSelected(true);
+			chckbxSpiritGuardians.setSelected(true);
+			chckbxMagicWeapon.setSelected(true);
+			chckbxSpiritualWeapon.setSelected(true);
+			chckbxDivineFavor.setSelected(true);
+			chckbxShieldOfFaith.setSelected(true);
+		}
+		else if (clericLevel >= 5) {
+			chckbxFlameStrike.setSelected(false);
+			chckbxHoldMonster.setSelected(false);
+			chckbxFreedomOfMovement.setSelected(false);
+			chckbxStoneskin.setSelected(false);
+			chckbxCrusadersMantle.setSelected(true);
+			chckbxSpiritGuardians.setSelected(true);
+			chckbxMagicWeapon.setSelected(true);
+			chckbxSpiritualWeapon.setSelected(true);
+			chckbxDivineFavor.setSelected(true);
+			chckbxShieldOfFaith.setSelected(true);
+		}
+		else if (clericLevel >= 3) {
+			chckbxFlameStrike.setSelected(false);
+			chckbxHoldMonster.setSelected(false);
+			chckbxFreedomOfMovement.setSelected(false);
+			chckbxStoneskin.setSelected(false);
+			chckbxCrusadersMantle.setSelected(false);
+			chckbxSpiritGuardians.setSelected(false);
+			chckbxMagicWeapon.setSelected(true);
+			chckbxSpiritualWeapon.setSelected(true);
+			chckbxDivineFavor.setSelected(true);
+			chckbxShieldOfFaith.setSelected(true);
+		}
+		else if (clericLevel >= 1) {
+			chckbxFlameStrike.setSelected(false);
+			chckbxHoldMonster.setSelected(false);
+			chckbxFreedomOfMovement.setSelected(false);
+			chckbxStoneskin.setSelected(false);
+			chckbxCrusadersMantle.setSelected(false);
+			chckbxSpiritGuardians.setSelected(false);
+			chckbxMagicWeapon.setSelected(false);
+			chckbxSpiritualWeapon.setSelected(false);
+			chckbxDivineFavor.setSelected(true);
+			chckbxShieldOfFaith.setSelected(true);
+		}
+		
+		chckbxFlameStrike.setEnabled(false);
+		chckbxHoldMonster.setEnabled(false);
+		chckbxFreedomOfMovement.setEnabled(false);
+		chckbxStoneskin.setEnabled(false);
+		chckbxCrusadersMantle.setEnabled(false);
+		chckbxSpiritGuardians.setEnabled(false);
+		chckbxMagicWeapon.setEnabled(false);
+		chckbxSpiritualWeapon.setEnabled(false);
+		chckbxDivineFavor.setEnabled(false);
+		chckbxShieldOfFaith.setEnabled(false);
+		
+	}
+
+	public static void spellLimitCheck (JCheckBox spellName) {
+		if (spellName.isSelected()) {
+			numOfSpells++;
+			if (numOfSpells == spellLimit) {
+				chckbxBane.setEnabled(false);
+				chckbxBless.setEnabled(false);
+				chckbxCommand.setEnabled(false);
+				chckbxCreatedestroyWater.setEnabled(false);
+				chckbxCureWounds.setEnabled(false);
+				chckbxDetectEvilAnd.setEnabled(false);
+				chckbxDetectMagic.setEnabled(false);
+				chckbxDetectPoisondisease.setEnabled(false);
+				chckbxGuidingBolt.setEnabled(false);
+				chckbxHealingWord.setEnabled(false);
+				chckbxInflictWounds.setEnabled(false);
+				chckbxProtectionFromEvilgood.setEnabled(false);
+				chckbxPurifyFooddrink.setEnabled(false);
+				chckbxSanctuary.setEnabled(false);
+				chckbxShieldOfFaith.setEnabled(false);
+				chckbxAid.setEnabled(false);
+				chckbxAugury.setEnabled(false);
+				chckbxBlindnessdeafness.setEnabled(false);
+				chckbxCalmEmotions.setEnabled(false);
+				chckbxContinualFlame.setEnabled(false);
+				chckbxEnhanceAbility.setEnabled(false);
+				chckbxFindTraps.setEnabled(false);
+				chckbxGentleRepose.setEnabled(false);
+				chckbxHoldPerson.setEnabled(false);
+				chckbxLesserRestoration.setEnabled(false);
+				chckbxLocateObject.setEnabled(false);
+				chckbxPrayerOfHealing.setEnabled(false);
+				chckbxProtectionFromPoison.setEnabled(false);
+				chckbxSilence.setEnabled(false);
+				chckbxSpiritualWeapon.setEnabled(false);
+				chckbxWardingBond.setEnabled(false);
+				chckbxZoneOfTruth.setEnabled(false);
+				chckbxAnimateDead.setEnabled(false);
+				chckbxBeaconOfHope.setEnabled(false);
+				chckbxBestowCurse.setEnabled(false);
+				chckbxClairvoyance.setEnabled(false);
+				chckbxCreateFoodwater.setEnabled(false);
+				chckbxDaylight.setEnabled(false);
+				chckbxDispelMagic.setEnabled(false);
+				chckbxFeignDeath.setEnabled(false);
+				chckbxGlyphOfWarding.setEnabled(false);
+				chckbxMagicCircle.setEnabled(false);
+				chckbxMassHealingWord.setEnabled(false);
+				chckbxMeldIntoStone.setEnabled(false);
+				chckbxProtectionFromEnergy.setEnabled(false);
+				chckbxRemoveCurse.setEnabled(false);
+				chckbxRevivify.setEnabled(false);
+				chckbxSending.setEnabled(false);
+				chckbxSpeakWithDead.setEnabled(false);
+				chckbxSpiritGuardians.setEnabled(false);
+				chckbxTongues.setEnabled(false);
+				chckbxWaterWalk.setEnabled(false);
+				chckbxBanishment.setEnabled(false);
+				chckbxControlWater.setEnabled(false);
+				chckbxDeathWard.setEnabled(false);
+				chckbxDivination.setEnabled(false);
+				chckbxFreedomOfMovement.setEnabled(false);
+				chckbxGuardianOfFaith.setEnabled(false);
+				chckbxLocateCreature.setEnabled(false);
+				chckbxStoneShape.setEnabled(false);
+				chckbxCommune.setEnabled(false);
+				chckbxContagion.setEnabled(false);
+				chckbxDispelEvilgood.setEnabled(false);
+				chckbxFlameStrike.setEnabled(false);
+				chckbxGeas.setEnabled(false);
+				chckbxGreaterRestoration.setEnabled(false);
+				chckbxHallow.setEnabled(false);
+				chckbxInsectPlague.setEnabled(false);
+				chckbxLegendLore.setEnabled(false);
+				chckbxMassCureWounds.setEnabled(false);
+				chckbxPlanarBinding.setEnabled(false);
+				chckbxRaiseDead.setEnabled(false);
+				chckbxScrying.setEnabled(false);
+				chckbxBladeBarrier.setEnabled(false);
+				chckbxCreateUndead.setEnabled(false);
+				chckbxFindThePath.setEnabled(false);
+				chckbxForbiddance.setEnabled(false);
+				chckbxHarm.setEnabled(false);
+				chckbxHeal.setEnabled(false);
+				chckbxHeroesFeast.setEnabled(false);
+				chckbxPlanarAlly.setEnabled(false);
+				chckbxTrueSeeing.setEnabled(false);
+				chckbxWordOfRecall.setEnabled(false);
+				chckbxConjureCelestial.setEnabled(false);
+				chckbxDivineWord.setEnabled(false);
+				chckbxEtherealness.setEnabled(false);
+				chckbxFireStorm.setEnabled(false);
+				chckbxPlaneShift.setEnabled(false);
+				chckbxRegenerate.setEnabled(false);
+				chckbxResurrection.setEnabled(false);
+				chckbxSymbol.setEnabled(false);
+				chckbxAntimagicField.setEnabled(false);
+				chckbxControlWeather.setEnabled(false);
+				chckbxEarthquake.setEnabled(false);
+				chckbxHolyAura.setEnabled(false);
+				chckbxAstralProjection.setEnabled(false);
+				chckbxGate.setEnabled(false);
+				chckbxMassHeal.setEnabled(false);
+				chckbxTrueResurrection.setEnabled(false);
+			}
+		}
+		else if (!spellName.isSelected()) {
+			numOfSpells--;
+		}
+		spellCount.setText(numOfSpells.toString());
+	}
+	
+	public static void availableSpells(Integer clericLvl) {
+		
+		if (clericLvl >= 17) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(true);
+			chckbxContagion.setEnabled(true);
+			chckbxDispelEvilgood.setEnabled(true);
+			chckbxFlameStrike.setEnabled(true);
+			chckbxGeas.setEnabled(true);
+			chckbxGreaterRestoration.setEnabled(true);
+			chckbxHallow.setEnabled(true);
+			chckbxInsectPlague.setEnabled(true);
+			chckbxLegendLore.setEnabled(true);
+			chckbxMassCureWounds.setEnabled(true);
+			chckbxPlanarBinding.setEnabled(true);
+			chckbxRaiseDead.setEnabled(true);
+			chckbxScrying.setEnabled(true);
+			chckbxBladeBarrier.setEnabled(true);
+			chckbxCreateUndead.setEnabled(true);
+			chckbxFindThePath.setEnabled(true);
+			chckbxForbiddance.setEnabled(true);
+			chckbxHarm.setEnabled(true);
+			chckbxHeal.setEnabled(true);
+			chckbxHeroesFeast.setEnabled(true);
+			chckbxPlanarAlly.setEnabled(true);
+			chckbxTrueSeeing.setEnabled(true);
+			chckbxWordOfRecall.setEnabled(true);
+			chckbxConjureCelestial.setEnabled(true);
+			chckbxDivineWord.setEnabled(true);
+			chckbxEtherealness.setEnabled(true);
+			chckbxFireStorm.setEnabled(true);
+			chckbxPlaneShift.setEnabled(true);
+			chckbxRegenerate.setEnabled(true);
+			chckbxResurrection.setEnabled(true);
+			chckbxSymbol.setEnabled(true);
+			chckbxAntimagicField.setEnabled(true);
+			chckbxControlWeather.setEnabled(true);
+			chckbxEarthquake.setEnabled(true);
+			chckbxHolyAura.setEnabled(true);
+			chckbxAstralProjection.setEnabled(true);
+			chckbxGate.setEnabled(true);
+			chckbxMassHeal.setEnabled(true);
+			chckbxTrueResurrection.setEnabled(true);
+		}
+		else if (clericLvl >= 15) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(true);
+			chckbxContagion.setEnabled(true);
+			chckbxDispelEvilgood.setEnabled(true);
+			chckbxFlameStrike.setEnabled(true);
+			chckbxGeas.setEnabled(true);
+			chckbxGreaterRestoration.setEnabled(true);
+			chckbxHallow.setEnabled(true);
+			chckbxInsectPlague.setEnabled(true);
+			chckbxLegendLore.setEnabled(true);
+			chckbxMassCureWounds.setEnabled(true);
+			chckbxPlanarBinding.setEnabled(true);
+			chckbxRaiseDead.setEnabled(true);
+			chckbxScrying.setEnabled(true);
+			chckbxBladeBarrier.setEnabled(true);
+			chckbxCreateUndead.setEnabled(true);
+			chckbxFindThePath.setEnabled(true);
+			chckbxForbiddance.setEnabled(true);
+			chckbxHarm.setEnabled(true);
+			chckbxHeal.setEnabled(true);
+			chckbxHeroesFeast.setEnabled(true);
+			chckbxPlanarAlly.setEnabled(true);
+			chckbxTrueSeeing.setEnabled(true);
+			chckbxWordOfRecall.setEnabled(true);
+			chckbxConjureCelestial.setEnabled(true);
+			chckbxDivineWord.setEnabled(true);
+			chckbxEtherealness.setEnabled(true);
+			chckbxFireStorm.setEnabled(true);
+			chckbxPlaneShift.setEnabled(true);
+			chckbxRegenerate.setEnabled(true);
+			chckbxResurrection.setEnabled(true);
+			chckbxSymbol.setEnabled(true);
+			chckbxAntimagicField.setEnabled(true);
+			chckbxControlWeather.setEnabled(true);
+			chckbxEarthquake.setEnabled(true);
+			chckbxHolyAura.setEnabled(true);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 13) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(true);
+			chckbxContagion.setEnabled(true);
+			chckbxDispelEvilgood.setEnabled(true);
+			chckbxFlameStrike.setEnabled(true);
+			chckbxGeas.setEnabled(true);
+			chckbxGreaterRestoration.setEnabled(true);
+			chckbxHallow.setEnabled(true);
+			chckbxInsectPlague.setEnabled(true);
+			chckbxLegendLore.setEnabled(true);
+			chckbxMassCureWounds.setEnabled(true);
+			chckbxPlanarBinding.setEnabled(true);
+			chckbxRaiseDead.setEnabled(true);
+			chckbxScrying.setEnabled(true);
+			chckbxBladeBarrier.setEnabled(true);
+			chckbxCreateUndead.setEnabled(true);
+			chckbxFindThePath.setEnabled(true);
+			chckbxForbiddance.setEnabled(true);
+			chckbxHarm.setEnabled(true);
+			chckbxHeal.setEnabled(true);
+			chckbxHeroesFeast.setEnabled(true);
+			chckbxPlanarAlly.setEnabled(true);
+			chckbxTrueSeeing.setEnabled(true);
+			chckbxWordOfRecall.setEnabled(true);
+			chckbxConjureCelestial.setEnabled(true);
+			chckbxDivineWord.setEnabled(true);
+			chckbxEtherealness.setEnabled(true);
+			chckbxFireStorm.setEnabled(true);
+			chckbxPlaneShift.setEnabled(true);
+			chckbxRegenerate.setEnabled(true);
+			chckbxResurrection.setEnabled(true);
+			chckbxSymbol.setEnabled(true);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 11) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(true);
+			chckbxContagion.setEnabled(true);
+			chckbxDispelEvilgood.setEnabled(true);
+			chckbxFlameStrike.setEnabled(true);
+			chckbxGeas.setEnabled(true);
+			chckbxGreaterRestoration.setEnabled(true);
+			chckbxHallow.setEnabled(true);
+			chckbxInsectPlague.setEnabled(true);
+			chckbxLegendLore.setEnabled(true);
+			chckbxMassCureWounds.setEnabled(true);
+			chckbxPlanarBinding.setEnabled(true);
+			chckbxRaiseDead.setEnabled(true);
+			chckbxScrying.setEnabled(true);
+			chckbxBladeBarrier.setEnabled(true);
+			chckbxCreateUndead.setEnabled(true);
+			chckbxFindThePath.setEnabled(true);
+			chckbxForbiddance.setEnabled(true);
+			chckbxHarm.setEnabled(true);
+			chckbxHeal.setEnabled(true);
+			chckbxHeroesFeast.setEnabled(true);
+			chckbxPlanarAlly.setEnabled(true);
+			chckbxTrueSeeing.setEnabled(true);
+			chckbxWordOfRecall.setEnabled(true);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 9) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(true);
+			chckbxContagion.setEnabled(true);
+			chckbxDispelEvilgood.setEnabled(true);
+			chckbxFlameStrike.setEnabled(true);
+			chckbxGeas.setEnabled(true);
+			chckbxGreaterRestoration.setEnabled(true);
+			chckbxHallow.setEnabled(true);
+			chckbxInsectPlague.setEnabled(true);
+			chckbxLegendLore.setEnabled(true);
+			chckbxMassCureWounds.setEnabled(true);
+			chckbxPlanarBinding.setEnabled(true);
+			chckbxRaiseDead.setEnabled(true);
+			chckbxScrying.setEnabled(true);
+			chckbxBladeBarrier.setEnabled(false);
+			chckbxCreateUndead.setEnabled(false);
+			chckbxFindThePath.setEnabled(false);
+			chckbxForbiddance.setEnabled(false);
+			chckbxHarm.setEnabled(false);
+			chckbxHeal.setEnabled(false);
+			chckbxHeroesFeast.setEnabled(false);
+			chckbxPlanarAlly.setEnabled(false);
+			chckbxTrueSeeing.setEnabled(false);
+			chckbxWordOfRecall.setEnabled(false);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 7) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(true);
+			chckbxControlWater.setEnabled(true);
+			chckbxDeathWard.setEnabled(true);
+			chckbxDivination.setEnabled(true);
+			chckbxFreedomOfMovement.setEnabled(true);
+			chckbxGuardianOfFaith.setEnabled(true);
+			chckbxLocateCreature.setEnabled(true);
+			chckbxStoneShape.setEnabled(true);
+			chckbxCommune.setEnabled(false);
+			chckbxContagion.setEnabled(false);
+			chckbxDispelEvilgood.setEnabled(false);
+			chckbxFlameStrike.setEnabled(false);
+			chckbxGeas.setEnabled(false);
+			chckbxGreaterRestoration.setEnabled(false);
+			chckbxHallow.setEnabled(false);
+			chckbxInsectPlague.setEnabled(false);
+			chckbxLegendLore.setEnabled(false);
+			chckbxMassCureWounds.setEnabled(false);
+			chckbxPlanarBinding.setEnabled(false);
+			chckbxRaiseDead.setEnabled(false);
+			chckbxScrying.setEnabled(false);
+			chckbxBladeBarrier.setEnabled(false);
+			chckbxCreateUndead.setEnabled(false);
+			chckbxFindThePath.setEnabled(false);
+			chckbxForbiddance.setEnabled(false);
+			chckbxHarm.setEnabled(false);
+			chckbxHeal.setEnabled(false);
+			chckbxHeroesFeast.setEnabled(false);
+			chckbxPlanarAlly.setEnabled(false);
+			chckbxTrueSeeing.setEnabled(false);
+			chckbxWordOfRecall.setEnabled(false);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 5) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(true);
+			chckbxBeaconOfHope.setEnabled(true);
+			chckbxBestowCurse.setEnabled(true);
+			chckbxClairvoyance.setEnabled(true);
+			chckbxCreateFoodwater.setEnabled(true);
+			chckbxDaylight.setEnabled(true);
+			chckbxDispelMagic.setEnabled(true);
+			chckbxFeignDeath.setEnabled(true);
+			chckbxGlyphOfWarding.setEnabled(true);
+			chckbxMagicCircle.setEnabled(true);
+			chckbxMassHealingWord.setEnabled(true);
+			chckbxMeldIntoStone.setEnabled(true);
+			chckbxProtectionFromEnergy.setEnabled(true);
+			chckbxRemoveCurse.setEnabled(true);
+			chckbxRevivify.setEnabled(true);
+			chckbxSending.setEnabled(true);
+			chckbxSpeakWithDead.setEnabled(true);
+			chckbxSpiritGuardians.setEnabled(true);
+			chckbxTongues.setEnabled(true);
+			chckbxWaterWalk.setEnabled(true);
+			chckbxBanishment.setEnabled(false);
+			chckbxControlWater.setEnabled(false);
+			chckbxDeathWard.setEnabled(false);
+			chckbxDivination.setEnabled(false);
+			chckbxFreedomOfMovement.setEnabled(false);
+			chckbxGuardianOfFaith.setEnabled(false);
+			chckbxLocateCreature.setEnabled(false);
+			chckbxStoneShape.setEnabled(false);
+			chckbxCommune.setEnabled(false);
+			chckbxContagion.setEnabled(false);
+			chckbxDispelEvilgood.setEnabled(false);
+			chckbxFlameStrike.setEnabled(false);
+			chckbxGeas.setEnabled(false);
+			chckbxGreaterRestoration.setEnabled(false);
+			chckbxHallow.setEnabled(false);
+			chckbxInsectPlague.setEnabled(false);
+			chckbxLegendLore.setEnabled(false);
+			chckbxMassCureWounds.setEnabled(false);
+			chckbxPlanarBinding.setEnabled(false);
+			chckbxRaiseDead.setEnabled(false);
+			chckbxScrying.setEnabled(false);
+			chckbxBladeBarrier.setEnabled(false);
+			chckbxCreateUndead.setEnabled(false);
+			chckbxFindThePath.setEnabled(false);
+			chckbxForbiddance.setEnabled(false);
+			chckbxHarm.setEnabled(false);
+			chckbxHeal.setEnabled(false);
+			chckbxHeroesFeast.setEnabled(false);
+			chckbxPlanarAlly.setEnabled(false);
+			chckbxTrueSeeing.setEnabled(false);
+			chckbxWordOfRecall.setEnabled(false);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 3) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(true);
+			chckbxAugury.setEnabled(true);
+			chckbxBlindnessdeafness.setEnabled(true);
+			chckbxCalmEmotions.setEnabled(true);
+			chckbxContinualFlame.setEnabled(true);
+			chckbxEnhanceAbility.setEnabled(true);
+			chckbxFindTraps.setEnabled(true);
+			chckbxGentleRepose.setEnabled(true);
+			chckbxHoldPerson.setEnabled(true);
+			chckbxLesserRestoration.setEnabled(true);
+			chckbxLocateObject.setEnabled(true);
+			chckbxPrayerOfHealing.setEnabled(true);
+			chckbxProtectionFromPoison.setEnabled(true);
+			chckbxSilence.setEnabled(true);
+			chckbxSpiritualWeapon.setEnabled(true);
+			chckbxWardingBond.setEnabled(true);
+			chckbxZoneOfTruth.setEnabled(true);
+			chckbxAnimateDead.setEnabled(false);
+			chckbxBeaconOfHope.setEnabled(false);
+			chckbxBestowCurse.setEnabled(false);
+			chckbxClairvoyance.setEnabled(false);
+			chckbxCreateFoodwater.setEnabled(false);
+			chckbxDaylight.setEnabled(false);
+			chckbxDispelMagic.setEnabled(false);
+			chckbxFeignDeath.setEnabled(false);
+			chckbxGlyphOfWarding.setEnabled(false);
+			chckbxMagicCircle.setEnabled(false);
+			chckbxMassHealingWord.setEnabled(false);
+			chckbxMeldIntoStone.setEnabled(false);
+			chckbxProtectionFromEnergy.setEnabled(false);
+			chckbxRemoveCurse.setEnabled(false);
+			chckbxRevivify.setEnabled(false);
+			chckbxSending.setEnabled(false);
+			chckbxSpeakWithDead.setEnabled(false);
+			chckbxSpiritGuardians.setEnabled(false);
+			chckbxTongues.setEnabled(false);
+			chckbxWaterWalk.setEnabled(false);
+			chckbxBanishment.setEnabled(false);
+			chckbxControlWater.setEnabled(false);
+			chckbxDeathWard.setEnabled(false);
+			chckbxDivination.setEnabled(false);
+			chckbxFreedomOfMovement.setEnabled(false);
+			chckbxGuardianOfFaith.setEnabled(false);
+			chckbxLocateCreature.setEnabled(false);
+			chckbxStoneShape.setEnabled(false);
+			chckbxCommune.setEnabled(false);
+			chckbxContagion.setEnabled(false);
+			chckbxDispelEvilgood.setEnabled(false);
+			chckbxFlameStrike.setEnabled(false);
+			chckbxGeas.setEnabled(false);
+			chckbxGreaterRestoration.setEnabled(false);
+			chckbxHallow.setEnabled(false);
+			chckbxInsectPlague.setEnabled(false);
+			chckbxLegendLore.setEnabled(false);
+			chckbxMassCureWounds.setEnabled(false);
+			chckbxPlanarBinding.setEnabled(false);
+			chckbxRaiseDead.setEnabled(false);
+			chckbxScrying.setEnabled(false);
+			chckbxBladeBarrier.setEnabled(false);
+			chckbxCreateUndead.setEnabled(false);
+			chckbxFindThePath.setEnabled(false);
+			chckbxForbiddance.setEnabled(false);
+			chckbxHarm.setEnabled(false);
+			chckbxHeal.setEnabled(false);
+			chckbxHeroesFeast.setEnabled(false);
+			chckbxPlanarAlly.setEnabled(false);
+			chckbxTrueSeeing.setEnabled(false);
+			chckbxWordOfRecall.setEnabled(false);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		else if (clericLvl >= 1) {
+			chckbxBane.setEnabled(true);
+			chckbxBless.setEnabled(true);
+			chckbxCommand.setEnabled(true);
+			chckbxCreatedestroyWater.setEnabled(true);
+			chckbxCureWounds.setEnabled(true);
+			chckbxDetectEvilAnd.setEnabled(true);
+			chckbxDetectMagic.setEnabled(true);
+			chckbxDetectPoisondisease.setEnabled(true);
+			chckbxGuidingBolt.setEnabled(true);
+			chckbxHealingWord.setEnabled(true);
+			chckbxInflictWounds.setEnabled(true);
+			chckbxProtectionFromEvilgood.setEnabled(true);
+			chckbxPurifyFooddrink.setEnabled(true);
+			chckbxSanctuary.setEnabled(true);
+			chckbxShieldOfFaith.setEnabled(true);
+			chckbxAid.setEnabled(false);
+			chckbxAugury.setEnabled(false);
+			chckbxBlindnessdeafness.setEnabled(false);
+			chckbxCalmEmotions.setEnabled(false);
+			chckbxContinualFlame.setEnabled(false);
+			chckbxEnhanceAbility.setEnabled(false);
+			chckbxFindTraps.setEnabled(false);
+			chckbxGentleRepose.setEnabled(false);
+			chckbxHoldPerson.setEnabled(false);
+			chckbxLesserRestoration.setEnabled(false);
+			chckbxLocateObject.setEnabled(false);
+			chckbxPrayerOfHealing.setEnabled(false);
+			chckbxProtectionFromPoison.setEnabled(false);
+			chckbxSilence.setEnabled(false);
+			chckbxSpiritualWeapon.setEnabled(false);
+			chckbxWardingBond.setEnabled(false);
+			chckbxZoneOfTruth.setEnabled(false);
+			chckbxAnimateDead.setEnabled(false);
+			chckbxBeaconOfHope.setEnabled(false);
+			chckbxBestowCurse.setEnabled(false);
+			chckbxClairvoyance.setEnabled(false);
+			chckbxCreateFoodwater.setEnabled(false);
+			chckbxDaylight.setEnabled(false);
+			chckbxDispelMagic.setEnabled(false);
+			chckbxFeignDeath.setEnabled(false);
+			chckbxGlyphOfWarding.setEnabled(false);
+			chckbxMagicCircle.setEnabled(false);
+			chckbxMassHealingWord.setEnabled(false);
+			chckbxMeldIntoStone.setEnabled(false);
+			chckbxProtectionFromEnergy.setEnabled(false);
+			chckbxRemoveCurse.setEnabled(false);
+			chckbxRevivify.setEnabled(false);
+			chckbxSending.setEnabled(false);
+			chckbxSpeakWithDead.setEnabled(false);
+			chckbxSpiritGuardians.setEnabled(false);
+			chckbxTongues.setEnabled(false);
+			chckbxWaterWalk.setEnabled(false);
+			chckbxBanishment.setEnabled(false);
+			chckbxControlWater.setEnabled(false);
+			chckbxDeathWard.setEnabled(false);
+			chckbxDivination.setEnabled(false);
+			chckbxFreedomOfMovement.setEnabled(false);
+			chckbxGuardianOfFaith.setEnabled(false);
+			chckbxLocateCreature.setEnabled(false);
+			chckbxStoneShape.setEnabled(false);
+			chckbxCommune.setEnabled(false);
+			chckbxContagion.setEnabled(false);
+			chckbxDispelEvilgood.setEnabled(false);
+			chckbxFlameStrike.setEnabled(false);
+			chckbxGeas.setEnabled(false);
+			chckbxGreaterRestoration.setEnabled(false);
+			chckbxHallow.setEnabled(false);
+			chckbxInsectPlague.setEnabled(false);
+			chckbxLegendLore.setEnabled(false);
+			chckbxMassCureWounds.setEnabled(false);
+			chckbxPlanarBinding.setEnabled(false);
+			chckbxRaiseDead.setEnabled(false);
+			chckbxScrying.setEnabled(false);
+			chckbxBladeBarrier.setEnabled(false);
+			chckbxCreateUndead.setEnabled(false);
+			chckbxFindThePath.setEnabled(false);
+			chckbxForbiddance.setEnabled(false);
+			chckbxHarm.setEnabled(false);
+			chckbxHeal.setEnabled(false);
+			chckbxHeroesFeast.setEnabled(false);
+			chckbxPlanarAlly.setEnabled(false);
+			chckbxTrueSeeing.setEnabled(false);
+			chckbxWordOfRecall.setEnabled(false);
+			chckbxConjureCelestial.setEnabled(false);
+			chckbxDivineWord.setEnabled(false);
+			chckbxEtherealness.setEnabled(false);
+			chckbxFireStorm.setEnabled(false);
+			chckbxPlaneShift.setEnabled(false);
+			chckbxRegenerate.setEnabled(false);
+			chckbxResurrection.setEnabled(false);
+			chckbxSymbol.setEnabled(false);
+			chckbxAntimagicField.setEnabled(false);
+			chckbxControlWeather.setEnabled(false);
+			chckbxEarthquake.setEnabled(false);
+			chckbxHolyAura.setEnabled(false);
+			chckbxAstralProjection.setEnabled(false);
+			chckbxGate.setEnabled(false);
+			chckbxMassHeal.setEnabled(false);
+			chckbxTrueResurrection.setEnabled(false);
+		}
+		
+	}
+	
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "<- Back");
+			putValue(SHORT_DESCRIPTION, "Go back to change your domain");
+		}
+		public void actionPerformed(ActionEvent e) {
+			clericStats.main(null);
+			frame.dispose();
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "Reset");
+			putValue(SHORT_DESCRIPTION, "Reset spell selection");
+		}
+		public void actionPerformed(ActionEvent e) {
+			
+			chckbxBane.setSelected(false);
+			chckbxBless.setSelected(false);
+			chckbxCommand.setSelected(false);
+			chckbxCreatedestroyWater.setSelected(false);
+			chckbxCureWounds.setSelected(false);
+			chckbxDetectEvilAnd.setSelected(false);
+			chckbxDetectMagic.setSelected(false);
+			chckbxDetectPoisondisease.setSelected(false);
+			chckbxGuidingBolt.setSelected(false);
+			chckbxHealingWord.setSelected(false);
+			chckbxInflictWounds.setSelected(false);
+			chckbxProtectionFromEvilgood.setSelected(false);
+			chckbxPurifyFooddrink.setSelected(false);
+			chckbxSanctuary.setSelected(false);
+			chckbxShieldOfFaith.setSelected(false);
+			chckbxAid.setSelected(false);
+			chckbxAugury.setSelected(false);
+			chckbxBlindnessdeafness.setSelected(false);
+			chckbxCalmEmotions.setSelected(false);
+			chckbxContinualFlame.setSelected(false);
+			chckbxEnhanceAbility.setSelected(false);
+			chckbxFindTraps.setSelected(false);
+			chckbxGentleRepose.setSelected(false);
+			chckbxHoldPerson.setSelected(false);
+			chckbxLesserRestoration.setSelected(false);
+			chckbxLocateObject.setSelected(false);
+			chckbxPrayerOfHealing.setSelected(false);
+			chckbxProtectionFromPoison.setSelected(false);
+			chckbxSilence.setSelected(false);
+			chckbxSpiritualWeapon.setSelected(false);
+			chckbxWardingBond.setSelected(false);
+			chckbxZoneOfTruth.setSelected(false);
+			chckbxAnimateDead.setSelected(false);
+			chckbxBeaconOfHope.setSelected(false);
+			chckbxBestowCurse.setSelected(false);
+			chckbxClairvoyance.setSelected(false);
+			chckbxCreateFoodwater.setSelected(false);
+			chckbxDaylight.setSelected(false);
+			chckbxDispelMagic.setSelected(false);
+			chckbxFeignDeath.setSelected(false);
+			chckbxGlyphOfWarding.setSelected(false);
+			chckbxMagicCircle.setSelected(false);
+			chckbxMassHealingWord.setSelected(false);
+			chckbxMeldIntoStone.setSelected(false);
+			chckbxProtectionFromEnergy.setSelected(false);
+			chckbxRemoveCurse.setSelected(false);
+			chckbxRevivify.setSelected(false);
+			chckbxSending.setSelected(false);
+			chckbxSpeakWithDead.setSelected(false);
+			chckbxSpiritGuardians.setSelected(false);
+			chckbxTongues.setSelected(false);
+			chckbxWaterWalk.setSelected(false);
+			chckbxBanishment.setSelected(false);
+			chckbxControlWater.setSelected(false);
+			chckbxDeathWard.setSelected(false);
+			chckbxDivination.setSelected(false);
+			chckbxFreedomOfMovement.setSelected(false);
+			chckbxGuardianOfFaith.setSelected(false);
+			chckbxLocateCreature.setSelected(false);
+			chckbxStoneShape.setSelected(false);
+			chckbxCommune.setSelected(false);
+			chckbxContagion.setSelected(false);
+			chckbxDispelEvilgood.setSelected(false);
+			chckbxFlameStrike.setSelected(false);
+			chckbxGeas.setSelected(false);
+			chckbxGreaterRestoration.setSelected(false);
+			chckbxHallow.setSelected(false);
+			chckbxInsectPlague.setSelected(false);
+			chckbxLegendLore.setSelected(false);
+			chckbxMassCureWounds.setSelected(false);
+			chckbxPlanarBinding.setSelected(false);
+			chckbxRaiseDead.setSelected(false);
+			chckbxScrying.setSelected(false);
+			chckbxBladeBarrier.setSelected(false);
+			chckbxCreateUndead.setSelected(false);
+			chckbxFindThePath.setSelected(false);
+			chckbxForbiddance.setSelected(false);
+			chckbxHarm.setSelected(false);
+			chckbxHeal.setSelected(false);
+			chckbxHeroesFeast.setSelected(false);
+			chckbxPlanarAlly.setSelected(false);
+			chckbxTrueSeeing.setSelected(false);
+			chckbxWordOfRecall.setSelected(false);
+			chckbxConjureCelestial.setSelected(false);
+			chckbxDivineWord.setSelected(false);
+			chckbxEtherealness.setSelected(false);
+			chckbxFireStorm.setSelected(false);
+			chckbxPlaneShift.setSelected(false);
+			chckbxRegenerate.setSelected(false);
+			chckbxResurrection.setSelected(false);
+			chckbxSymbol.setSelected(false);
+			chckbxAntimagicField.setSelected(false);
+			chckbxControlWeather.setSelected(false);
+			chckbxEarthquake.setSelected(false);
+			chckbxHolyAura.setSelected(false);
+			chckbxAstralProjection.setSelected(false);
+			chckbxGate.setSelected(false);
+			chckbxMassHeal.setSelected(false);
+			chckbxTrueResurrection.setSelected(false);
+			
+			numOfSpells = 0;
+			spellCount.setText(numOfSpells.toString());
+			
+			availableSpells(clericLevel);
+			domainSpells(clericLevel);
+		}
+	}
+}
